@@ -1,12 +1,9 @@
-import expres, { json } from "express";
+import express, { json } from "express";
+import routes from "./routes";
 
-const app = expres();
+const app = express();
 
-
-
-
-app.get("/users", (req, res) => {
-  res.json({ Connected: true });
-});
+app.use(express.json());
+app.use(routes);
 
 app.listen(3333);
